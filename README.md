@@ -13,7 +13,9 @@ Air pollution has severe environmental and health impacts, with PM2.5 being a ma
 **2. Data Exploration & Preprocessing**
 Dataset Overview:
 The dataset consists of historical air quality measurements, including PM2.5 concentration, temperature, humidity, wind speed, and other meteorological parameters. The data spans multiple years, allowing for the analysis of seasonal trends and temporal dependencies.
+
 Preprocessing Steps:
+
 ●	Datetime Conversion: The 'datetime' column was converted to a datetime format and set as the index for time-series analysis.
 ●	Missing Value Handling: Missing values were filled using mean imputation.
 ●	Feature Selection: Non-informative columns such as 'No' were dropped.
@@ -30,15 +32,18 @@ The chosen model is a deep LSTM network designed to capture long-term dependenci
 ●	Dense Output Layer: A single neuron for PM2.5 concentration prediction.
 ●	Optimizer: Adam, selected for its adaptive learning rate.
 ●	Loss Function: Mean Squared Error (MSE), optimized for regression tasks.
-4. Experiment Table
-Experiment #	Parameters	Model Architecture	Output (RMSE)
-1	Learning rate = 0.01	Single LSTM layer, 128 units	35.45
-2	Learning rate = 0.001, Batch size = 64	Two LSTM layers, 64 units each	29.87
-3	Learning rate = 0.001, Dropout = 0.2	Two LSTM layers, 128 & 64 units	27.31
-4	Learning rate = 0.0005, Dropout = 0.3	Two LSTM layers, 128 & 64 units	24.85
-5	Learning rate = 0.0001, Time steps = 24	Bidirectional LSTM, 128 & 64 units	22.74
-5. Results and Discussion
-Our experiments show that:
+
+
+**4. Experiment Table**
+
+![image](https://github.com/user-attachments/assets/63156918-5931-4c1c-b53a-a51d1d7ca979)
+
+
+
+**5. Results and Discussion
+Our experiments show that:**
+
+
 ●	Increasing LSTM layers improved feature extraction and reduced RMSE.
 ●	Lowering the learning rate and adding dropout layers prevented overfitting.
 ●	A bidirectional LSTM with 24 time steps achieved the best performance, capturing both past and future dependencies.
